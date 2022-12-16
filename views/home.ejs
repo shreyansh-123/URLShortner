@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+       <div class="container">
+        <h1>URL Shortner</h1>
+        <div>
+            <form action="/url" method="post" class="form-inline">
+                <input type="url" name="url" class="form-control">
+                <button type="submit" class="btn btn-success ml-2">Short</button>
+            </form>
+        </div>
+        <div class="data">
+            <table class="table">
+                <tr class="active">
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                </tr>
+                <% detail.forEach(data => { %>
+                <tr class="active">
+                    <td><%= data.Full %></td>
+                    <td><a href="/<%= data.Short %>"><%= data.Short %></a></td>
+                    <td><%= data.Clicks %></td>
+                </tr>
+                <% }) %>
+            </table>
+        </div>
+       </div>
+    </body>
+</html>
